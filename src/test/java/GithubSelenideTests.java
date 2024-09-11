@@ -24,12 +24,12 @@ public class GithubSelenideTests {
         $("#wiki-tab").click();
 
 
-        //Открываем страницу SoftAssertions, и проверяем, что внутри есть пример кода для JUnit5
+        //Открываем страницу SoftAssertions
         $(".Box-row.wiki-more-pages-link").$("button").click();
         $("div.wiki-rightbar").$(byText("SoftAssertions")).click();
 
         /* Я нашел информацию, что аннотации @ExtendWith не было в Junit4. Она добавилась только в Junit5,
-        поэтому надеюсь, что это будет именно пример кода на Junit5 =) */
+        поэтому надеюсь, что это будет именно проверка на пример кода на Junit5 =) */
         $(".markdown-body").shouldHave(text("@ExtendWith"));
 
     }
