@@ -16,7 +16,7 @@ public class GithubSelenideTests {
     }
 
     @Test
-    void searchJUnit5ExampleCode() {
+    void searchJUnit5ExampleCodeTest() {
         //Открываем страницу Selenide в Github
         open("https://github.com/selenide/selenide/");
 
