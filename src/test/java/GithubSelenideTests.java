@@ -30,7 +30,19 @@ public class GithubSelenideTests {
 
         /* Я нашел информацию, что аннотации @ExtendWith не было в Junit4. Она добавилась только в Junit5,
         поэтому надеюсь, что это будет именно проверка на пример кода на Junit5 =) */
-        $(".markdown-body").shouldHave(text("@ExtendWith"));
+        $(".markdown-body").shouldHave(text(""" 
+@ExtendWith({SoftAssertsExtension.class})
+class Tests {
+  @Test
+  void test() {
+    Configuration.assertionMode = SOFT;
+    open("page.html");
+
+    $("#first").should(visible).click();
+    $("#second").should(visible).click();
+  }
+}
+"""));
 
     }
 
