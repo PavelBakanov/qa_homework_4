@@ -23,11 +23,11 @@ public class GithubSelenideTests {
         //Переходим в раздел Wiki проекта
         $("#wiki-tab").click();
 
-
         //Открываем страницу SoftAssertions
         $(".Box-row.wiki-more-pages-link").$("button").click();
         $("div.wiki-rightbar").$(byText("SoftAssertions")).click();
 
+        //Проверяем
         $(".markdown-body").shouldHave(text(""" 
                 @ExtendWith({SoftAssertsExtension.class})
                 class Tests {
